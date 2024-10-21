@@ -11,6 +11,7 @@ def list_all(mongo_collection):
     param: mongo_collection
     return: A list
     """
-    all_doc = mongo_collection.find()
-    for doc in all_doc:
-        print(doc)
+    all_doc = []
+    for doc in mongo_collection.find():
+        all_doc.append(doc)
+    return all_doc
