@@ -26,6 +26,6 @@ class Cache:
         return: a string
         """
         # generate a random uuid
-        random_key: str = uuid.uuid1().__str__()
+        random_key: str = str(uuid.uuid1())
         self.redis.set(str(random_key), data)
-        return random_key
+        return str(random_key)
