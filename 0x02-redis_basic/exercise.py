@@ -20,12 +20,12 @@ class Cache:
     def redis(self, redis_instance):
         self._redis = redis_instance
 
-    def store(self, data: int | str | float | bytes):
+    def store(self, data):
         """method to store a data
         param: data
         return: a string
         """
         # generate a random uuid
-        random_key: str = str(uuid.uuid1())
+        random_key = uuid.uuid1()
         self.redis.set(str(random_key), data)
         return str(random_key)
